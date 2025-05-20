@@ -58,6 +58,7 @@ export const apiHandlers = {
   monobot: import("./monobot/api"),
   n8n: import("./n8n/api"),
   nextcloudtalk: import("./nextcloudtalk/api"),
+  "octolane-ai": import("./octolane-ai/api"),
   office365calendar: import("./office365calendar/api"),
   office365video: import("./office365video/api"),
   paypal: import("./paypal/api"),
