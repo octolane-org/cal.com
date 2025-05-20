@@ -1,0 +1,16 @@
+{
+  "/*": "Don't modify slug - If required, do it using cli edit command",
+  "name": "Octolane AI",
+  "slug": "octolane-ai",
+  "type": "octolane-ai_crm",
+  "logo": "icon.svg",
+  "url": "https://octolane.com/redirect?to=/settings/integrations/calcom",
+  "variant": "crm",
+  "categories": ["crm"],
+  "publisher": "Octolane AI",
+  "email": "one@octolane.com",
+  "description": "Self-driving AI CRM that automates follow-ups, updates your pipeline, and guides your next move — all before you log in.",
+  "isTemplate": false,
+  "__createdUsingCli": true,
+  "__template": "basic"
+}
