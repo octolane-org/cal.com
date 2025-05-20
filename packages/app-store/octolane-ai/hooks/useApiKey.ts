@@ -1,6 +1,5 @@
+import { APP_DISPLAY_NAME, APP_NAME } from "@calcom/octolane-ai/constants";
 import { trpc } from "@calcom/trpc/react";
-
-import { APP_DISPLAY_NAME, APP_NAME } from "../constants";
 
 export function useApiKey() {
   const utils = trpc.useUtils();

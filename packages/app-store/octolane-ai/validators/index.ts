@@ -23,3 +23,12 @@ export const subscriptionAddSchema = z.object({
 export const subscriptionDeleteSchema = z.object({
   id: z.string(),
 });
+
+export const addSubscriptionSchema = z.object({
+  subscriber_url: z.string().url(),
+  trigger_event: z.nativeEnum(WebhookTriggerEvents),
+});
+
+export const deleteSubscriptionSchema = z.object({
+  subscription_id: z.string(),
+});

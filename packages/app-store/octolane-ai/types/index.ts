@@ -101,3 +101,22 @@ export type ServiceResponse<T> = {
   data: T;
   pagination: PaginationResponse;
 };
+
+export type Team = {
+  id: number;
+  name: string;
+};
+
+export type ApiKeyGeneratorProps = {
+  teams?: Team[];
+  onCreateApiKey: (teamId?: number) => Promise<string>;
+};
+
+export type CopyApiKeyProps = {
+  apiKey: string;
+};
+
+export type ExternalLinkProps = {
+  href: string;
+  children: React.ReactNode;
+};

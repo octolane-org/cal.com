@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
 import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
+import logger from "@calcom/lib/logger";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { APP_NAME, HTTP_METHOD } from "@calcom/octolane-ai/constants";
@@ -15,6 +16,8 @@ const querySchema = paginationSchema.extend({
 });
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const log = logger.getSubLogger({ prefix: ["API[/bookings]"] });
+
   try {
     const apiKey = req.headers["x-api-key"] as string;
     if (!apiKey) {
@@ -36,7 +39,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       "Bookings retrieved successfully"
     );
   } catch (error) {
-    console.error(error);
+    log.error(error);
     return errorResponse(res, "Unable to fetch bookings", STATUS_CODES.INTERNAL_SERVER_ERROR);
   }
 }

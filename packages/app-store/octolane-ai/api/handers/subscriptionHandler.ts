@@ -1,27 +1,21 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { v4 } from "uuid";
-import { z } from "zod";
 
 import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
 import { deleteSubscription } from "@calcom/features/webhooks/lib/scheduleTrigger";
+import logger from "@calcom/lib/logger";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { APP_NAME, HTTP_METHOD } from "@calcom/octolane-ai/constants";
 import { STATUS_CODES } from "@calcom/octolane-ai/constants/status-codes";
 import { successResponse, errorResponse } from "@calcom/octolane-ai/utils/api-response";
+import { addSubscriptionSchema, deleteSubscriptionSchema } from "@calcom/octolane-ai/validators";
 import { prisma } from "@calcom/prisma";
-import { WebhookTriggerEvents } from "@calcom/prisma/enums";
-
-const addSubscriptionSchema = z.object({
-  subscriber_url: z.string().url(),
-  trigger_event: z.nativeEnum(WebhookTriggerEvents),
-});
-
-const deleteSubscriptionSchema = z.object({
-  subscription_id: z.string(),
-});
+import type { WebhookTriggerEvents } from "@calcom/prisma/enums";
 
 async function addHandler(req: NextApiRequest, res: NextApiResponse) {
+  const log = logger.getSubLogger({ prefix: ["API[POST /subscriptions]"] });
+
   try {
     const apiKey = req.headers["x-api-key"] as string;
     if (!apiKey) {
@@ -63,12 +57,14 @@ async function addHandler(req: NextApiRequest, res: NextApiResponse) {
       STATUS_CODES.CREATED
     );
   } catch (error) {
-    console.error(error);
+    log.error(error);
     return errorResponse(res, "Unable to create subscription", STATUS_CODES.INTERNAL_SERVER_ERROR);
   }
 }
 
 async function deleteHandler(req: NextApiRequest, res: NextApiResponse) {
+  const log = logger.getSubLogger({ prefix: ["API[DELETE /subscriptions]"] });
+
   try {
     const apiKey = req.headers["x-api-key"] as string;
     if (!apiKey) {
@@ -94,7 +90,7 @@ async function deleteHandler(req: NextApiRequest, res: NextApiResponse) {
 
     return successResponse(res, null, undefined, "Subscription deleted successfully", STATUS_CODES.OK);
   } catch (error) {
-    console.error(error);
+    log.error(error);
     return errorResponse(res, "Unable to delete subscription", STATUS_CODES.INTERNAL_SERVER_ERROR);
   }
 }

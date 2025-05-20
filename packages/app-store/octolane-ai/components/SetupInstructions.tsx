@@ -1,5 +1,5 @@
-import { URLS } from "../constants";
-import { ExternalLink } from "./ExternalLink";
+import { ExternalLink } from "@calcom/octolane-ai/components/ExternalLink";
+import { URLS } from "@calcom/octolane-ai/constants";
 
 export function SetupInstructions() {
   return (

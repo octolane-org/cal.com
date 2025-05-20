@@ -1,11 +1,7 @@
 import Link from "next/link";
 
+import type { ExternalLinkProps } from "@calcom/octolane-ai/types";
 import { Button } from "@calcom/ui/components/button";
-
-interface ExternalLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
 
 export function ExternalLink({ href, children }: ExternalLinkProps) {
   return (

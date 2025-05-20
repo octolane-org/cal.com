@@ -3,13 +3,12 @@ import { Toaster } from "sonner";
 
 import AppNotInstalledMessage from "@calcom/app-store/_components/AppNotInstalledMessage";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { ApiKeyGenerator } from "@calcom/octolane-ai/components/ApiKeyGenerator";
+import { SetupInstructions } from "@calcom/octolane-ai/components/SetupInstructions";
+import { APP_NAME, APP_VARIANT } from "@calcom/octolane-ai/constants";
+import { useApiKey } from "@calcom/octolane-ai/hooks/useApiKey";
+import { useIntegration } from "@calcom/octolane-ai/hooks/useIntegration";
 import { Button } from "@calcom/ui/components/button";
-
-import { ApiKeyGenerator } from "../../components/ApiKeyGenerator";
-import { SetupInstructions } from "../../components/SetupInstructions";
-import { APP_NAME, APP_VARIANT } from "../../constants";
-import { useApiKey } from "../../hooks/useApiKey";
-import { useIntegration } from "../../hooks/useIntegration";
 
 export default function OctolaneSetup() {
   const { t } = useLocale();

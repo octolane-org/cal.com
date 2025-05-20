@@ -1,1 +1,1 @@
-export * as api from "./api";
+export * as api from "@calcom/octolane-ai/api";

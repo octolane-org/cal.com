@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
+import logger from "@calcom/lib/logger";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { APP_NAME, HTTP_METHOD } from "@calcom/octolane-ai/constants";
@@ -12,6 +13,8 @@ import { paginationSchema } from "@calcom/octolane-ai/validators";
 const querySchema = paginationSchema;
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const log = logger.getSubLogger({ prefix: ["API[/event-types]"] });
+
   try {
     const apiKey = req.headers["x-api-key"] as string;
     if (!apiKey) {
@@ -33,7 +36,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       "Event types retrieved successfully"
     );
   } catch (error) {
-    console.error(error);
+    log.error(error);
     return errorResponse(res, "Unable to fetch event types", STATUS_CODES.INTERNAL_SERVER_ERROR);
   }
 }

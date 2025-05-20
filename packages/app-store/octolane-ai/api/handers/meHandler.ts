@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
+import logger from "@calcom/lib/logger";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
 import { APP_NAME, HTTP_METHOD } from "@calcom/octolane-ai/constants";
@@ -9,8 +10,9 @@ import { successResponse, errorResponse } from "@calcom/octolane-ai/utils/api-re
 import prisma from "@calcom/prisma";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const log = logger.getSubLogger({ prefix: ["API[/me]"] });
+
   const apiKey = req.headers["x-api-key"] as string;
-  console.log("headers", req.headers);
   if (!apiKey) {
     return errorResponse(res, "No API key provided", STATUS_CODES.UNAUTHORIZED);
   }
@@ -39,7 +41,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return successResponse(res, user, undefined, "User retrieved successfully");
   } catch (error) {
-    console.error(error);
+    log.error(error);
     return errorResponse(res, "Unable to get user", STATUS_CODES.INTERNAL_SERVER_ERROR);
   }
 }

@@ -1,6 +1,5 @@
+import { APP_TYPE, APP_VARIANT } from "@calcom/octolane-ai/constants";
 import { trpc } from "@calcom/trpc/react";
-
-import { APP_TYPE, APP_VARIANT } from "../constants";
 
 export function useIntegration() {
   const integrations = trpc.viewer.apps.integrations.useQuery({ variant: APP_VARIANT });
