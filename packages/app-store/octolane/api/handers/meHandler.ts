@@ -4,9 +4,9 @@ import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
 import logger from "@calcom/lib/logger";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
-import { APP_NAME, HTTP_METHOD } from "@calcom/octolane-ai/constants";
-import { STATUS_CODES } from "@calcom/octolane-ai/constants/status-codes";
-import { successResponse, errorResponse } from "@calcom/octolane-ai/utils/api-response";
+import { APP_NAME, HTTP_METHOD } from "@calcom/octolane/constants";
+import { STATUS_CODES } from "@calcom/octolane/constants/status-codes";
+import { successResponse, errorResponse } from "@calcom/octolane/utils/api-response";
 import prisma from "@calcom/prisma";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {

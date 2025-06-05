@@ -3487,9 +3487,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@calcom/octolane-ai@workspace:packages/app-store/octolane-ai":
+"@calcom/octolane@workspace:packages/app-store/octolane":
   version: 0.0.0-use.local
-  resolution: "@calcom/octolane-ai@workspace:packages/app-store/octolane-ai"
+  resolution: "@calcom/octolane@workspace:packages/app-store/octolane"
   dependencies:
     "@calcom/lib": "*"
     "@calcom/types": "*"

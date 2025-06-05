@@ -1,5 +1,5 @@
-import { PAGINATION } from "@calcom/octolane-ai/constants";
-import type { GetBookingsQuery, ServiceResponse, Booking } from "@calcom/octolane-ai/types";
+import { PAGINATION } from "@calcom/octolane/constants";
+import type { GetBookingsQuery, ServiceResponse, Booking } from "@calcom/octolane/types";
 import prisma from "@calcom/prisma";
 
 export async function getBookings(

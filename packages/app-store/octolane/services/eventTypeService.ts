@@ -1,5 +1,5 @@
-import { PAGINATION } from "@calcom/octolane-ai/constants";
-import type { EventType, GetEventTypesQuery, ServiceResponse } from "@calcom/octolane-ai/types";
+import { PAGINATION } from "@calcom/octolane/constants";
+import type { EventType, GetEventTypesQuery, ServiceResponse } from "@calcom/octolane/types";
 import prisma from "@calcom/prisma";
 
 export async function getEventTypes(

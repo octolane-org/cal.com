@@ -1,4 +1,4 @@
-import { APP_TYPE, APP_VARIANT } from "@calcom/octolane-ai/constants";
+import { APP_TYPE, APP_VARIANT } from "@calcom/octolane/constants";
 import { trpc } from "@calcom/trpc/react";
 
 export function useIntegration() {

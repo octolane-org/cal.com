@@ -6,10 +6,10 @@ import { deleteSubscription } from "@calcom/features/webhooks/lib/scheduleTrigge
 import logger from "@calcom/lib/logger";
 import { defaultHandler } from "@calcom/lib/server/defaultHandler";
 import { defaultResponder } from "@calcom/lib/server/defaultResponder";
-import { APP_NAME, HTTP_METHOD } from "@calcom/octolane-ai/constants";
-import { STATUS_CODES } from "@calcom/octolane-ai/constants/status-codes";
-import { successResponse, errorResponse } from "@calcom/octolane-ai/utils/api-response";
-import { addSubscriptionSchema, deleteSubscriptionSchema } from "@calcom/octolane-ai/validators";
+import { APP_NAME, HTTP_METHOD } from "@calcom/octolane/constants";
+import { STATUS_CODES } from "@calcom/octolane/constants/status-codes";
+import { successResponse, errorResponse } from "@calcom/octolane/utils/api-response";
+import { addSubscriptionSchema, deleteSubscriptionSchema } from "@calcom/octolane/validators";
 import { prisma } from "@calcom/prisma";
 import type { WebhookTriggerEvents } from "@calcom/prisma/enums";
 

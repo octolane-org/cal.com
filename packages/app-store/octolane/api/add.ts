@@ -1,5 +1,5 @@
 import { createDefaultInstallation } from "@calcom/app-store/_utils/installation";
-import appConfig from "@calcom/octolane-ai/config.json";
+import appConfig from "@calcom/octolane/config.json";
 import type { AppDeclarativeHandler } from "@calcom/types/AppHandler";
 
 const handler: AppDeclarativeHandler = {

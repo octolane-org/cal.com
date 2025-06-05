@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { CopyApiKey } from "@calcom/octolane-ai/components/CopyApiKey";
-import type { ApiKeyGeneratorProps, Team } from "@calcom/octolane-ai/types";
+import { CopyApiKey } from "@calcom/octolane/components/CopyApiKey";
+import type { ApiKeyGeneratorProps, Team } from "@calcom/octolane/types";
 import { Button } from "@calcom/ui/components/button";
 
 export function ApiKeyGenerator({ teams, onCreateApiKey }: ApiKeyGeneratorProps) {
