@@ -1,6 +1,6 @@
 ---
 items:
-  - 1.png
+  - setup-instruction.png
 ---
 
 {DESCRIPTION}

@@ -68,5 +68,9 @@ declare namespace NodeJS {
      *  "non-strict" -> Strict CSP except the usage of unsafe-inline for `style-src`
      */
     readonly CSP_POLICY: "strict" | "non-strict";
+    /**
+     * The base URL for the Octolane integration.
+     */
+    readonly NEXT_PUBLIC_OCTOLANE_BASE_URI: string | undefined;
   }
 }

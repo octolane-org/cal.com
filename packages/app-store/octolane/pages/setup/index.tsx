@@ -25,7 +25,7 @@ export default function OctolaneSetup() {
         <div className="bg-default m-auto max-w-[43em] overflow-auto rounded pb-10 md:p-10">
           <div className="md:flex md:flex-row">
             <div className="invisible md:visible">
-              <img className="h-11" src="/api/app-store/octolane-ai/icon.svg" alt="Octolane AI Logo" />
+              <img className="h-11" src="/api/app-store/octolane/icon.svg" alt="Octolane AI Logo" />
             </div>
             <div className="ml-2 ltr:mr-2 rtl:ml-2 md:ml-5">
               <div className="text-default text-lg font-medium">Setting up your Octolane AI integration</div>

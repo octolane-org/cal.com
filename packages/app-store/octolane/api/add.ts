@@ -10,7 +10,7 @@ const handler: AppDeclarativeHandler = {
   handlerType: "add",
   redirect: {
     newTab: true,
-    url: "/apps/octolane-ai/setup",
+    url: "/apps/octolane/setup",
   },
   createCredential: ({ appType, user, slug, teamId }) =>
     createDefaultInstallation({ appType, user: user, slug, key: {}, teamId }),

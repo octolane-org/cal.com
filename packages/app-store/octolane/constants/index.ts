@@ -1,11 +1,13 @@
-export const APP_NAME = "octolane-ai";
-export const APP_TYPE = "octolane-ai_crm";
+import { OCTOLANE_BASE_URI } from "@calcom/lib/constants";
+
+export const APP_NAME = "octolane";
+export const APP_TYPE = "octolane_crm";
 export const APP_VARIANT = "crm";
 export const APP_DISPLAY_NAME = "Octolane AI";
 
 export const URLS = {
-  SIGN_IN: "https://www.octolane.com/auth/sign-in",
-  INTEGRATIONS: "https://octolane.com/redirect?to=/settings/integrations/calcom",
+  SIGN_IN: `${OCTOLANE_BASE_URI}/auth/sign-in`,
+  INTEGRATIONS: `${OCTOLANE_BASE_URI}/redirect?to=/settings/integrations/calcom`,
 } as const;
 
 export const HTTP_METHOD = {
