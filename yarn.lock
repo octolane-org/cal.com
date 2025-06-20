@@ -3496,6 +3496,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@calcom/octolane@workspace:packages/app-store/octolane":
+  version: 0.0.0-use.local
+  resolution: "@calcom/octolane@workspace:packages/app-store/octolane"
+  dependencies:
+    "@calcom/lib": "*"
+    "@calcom/types": "*"
+  languageName: unknown
+  linkType: soft
+
 "@calcom/office365calendar@workspace:packages/app-store/office365calendar":
   version: 0.0.0-use.local
   resolution: "@calcom/office365calendar@workspace:packages/app-store/office365calendar"

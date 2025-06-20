@@ -227,3 +227,5 @@ export const CAL_VIDEO_MEETING_LINK_FOR_TESTING = process.env.CAL_VIDEO_MEETING_
 
 export const IS_SMS_CREDITS_ENABLED = !!process.env.NEXT_PUBLIC_STRIPE_CREDITS_PRICE_ID;
 export const DATABASE_CHUNK_SIZE = parseInt(process.env.DATABASE_CHUNK_SIZE || "25", 10);
+
+export const OCTOLANE_BASE_URI = process.env.NEXT_PUBLIC_OCTOLANE_BASE_URI || "https://www.octolane.com";
